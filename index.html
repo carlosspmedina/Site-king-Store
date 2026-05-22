@@ -1,61 +1,517 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King Store</title>
-
-    <link rel="stylesheet" href="index.css">
-
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Store — Imported Jerseys</title>
+ 
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="index.css">
+  
+  <style>
+    /* Garantindo que o modal fique oculto inicialmente e flexível quando ativo */
+    #modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <div class="logo">
-        <h1>👑 King <span>Store</span></h1>
-    </div>
-
+ 
+  <!-- CURSOR CUSTOMIZADO -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+ 
+  <!-- ─── HEADER ─────────────────────────────── -->
+  <header id="header">
+   <img src="produtos.king/logo_preto.jpg.jpeg" class="logo-text">
     <nav>
-        <a href="#">Início</a>
-        <a href="#">Produtos</a>
-        <a href="#">Contato</a>
+      <a href="#">Início</a>
+      <a href="https://www.facebook.com/share/16fDFGuNaL/" target="_blank">
+        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/kingstoreimported" target="_blank">
+        <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+      </a>
+      <a href="https://wa.me/5511949008253" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+      </a>
     </nav>
-</header>
-<div class="texto">
-        
-
+  </header>
+ 
+  <!-- ─── HERO ──────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">⚡ Camisas Importadas Premium</div>
+    <h1>
+      <span class="outline">KING</span><br>
+      <span class="filled">STORE</span>
+    </h1>
+    <p class="hero-sub">As melhores camisas de futebol do mundo, direto pra você. Qualidade importada, entrega garantida.</p>
+    <div class="hero-cta">
+      <a href="#nossos-produtos" class="btn-primary">Ver Coleção</a>
+      <a href="https://wa.me/5511949008253" target="_blank" class="btn-ghost">Falar no WhatsApp</a>
     </div>
-      
-    <section class="secao-img1">
-    <div class="texto">
-        <h2>Bem-vindo à King Store</h2>
-        <p>As melhores camisas de futebol você encontra aqui.</p>
-
-        <a href="produtos.html">
-            <button>Ver Produtos</button>
-        </a>
+  </section>
+ 
+  <!-- ─── STATS ─────────────────────────────── -->
+  <div class="stats-bar reveal">
+    <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Modelos</div></div>
+    <div class="stat"><div class="stat-num">5K+</div><div class="stat-label">Clientes</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Importado</div></div>
+    <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Avaliação</div></div>
+  </div>
+ 
+  <!-- ─── PRODUTOS ──────────────────────────── -->
+  <section id="nossos-produtos">
+ 
+    <div class="section-header reveal">
+      <div>
+        <p class="section-tag">// Coleção 2026</p>
+        <h2 class="section-title">Nossos Produtos</h2>
+      </div>
+      <div class="section-filter">
+        <button class="filter-btn active">Todos</button>
+        <button class="filter-btn">Seleções</button>
+        <button class="filter-btn">Clubes</button>
+        <button class="filter-btn">Retrô</button>
+      </div>
     </div>
-</section>
-
-<section class="secao-img2"></section>
+ 
+    <div class="produtos-grid">
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Brasil"
+           data-desc="Brasil Amarela"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.nova.brasil.jpeg">
+        <div class="card-badge">Retrô</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.nova.brasil.jpeg" alt="Brasil Amarela">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Seleção</div>
+          <div class="card-name">Brasil Amarela</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Jogador Argentina"
+           data-desc="Argentina 2026"
+           data-preco="R$ 180,00"
+           data-src="produtos.king/camisa.argentina.jpg.jpeg">
+        <div class="card-badge">2026</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.argentina.jpg.jpeg" alt="Argentina 2026">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Seleção</div>
+          <div class="card-name">Argentina 2026</div>
+          <div class="card-price">R$ 180,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Palmeiras"
+           data-desc="Palmeiras A+"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.palmeiras.jpg.jpg">
+        <div class="card-badge">A+</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.palmeiras.jpg.jpg" alt="Palmeiras">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Clube</div>
+          <div class="card-name">Palmeiras A+</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Brasil Azul"
+           data-desc="Brasil Azul"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.preta.sp.jpeg">
+        <div class="card-badge">Retrô</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.preta.sp.jpeg" alt="Brasil Azul">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Seleção</div>
+          <div class="card-name">Brasil Azul</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Corinthians"
+           data-desc="Corinthians A+"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/conjunto.corinthi.jpg.jpg">
+        <div class="card-badge">A+</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/conjunto.corinthi.jpg.jpg" alt="Corinthians">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Clube</div>
+          <div class="card-name">Corinthians A+</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô São Paulo"
+           data-desc="São Paulo FC"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.vermelha.sp.jpeg">
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.vermelha.sp.jpeg" alt="São Paulo">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Clube</div>
+          <div class="card-name">São Paulo FC</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Ronaldo 9"
+           data-desc="Ronaldo Fenômeno"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/ronal.9.jpg.jpeg">
+        <div class="card-badge">Lenda</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/ronal.9.jpg.jpeg" alt="Ronaldo 9">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Ícone</div>
+          <div class="card-name">Ronaldo Nº9</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Brasil Branca"
+           data-desc="Brasil Branca"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/conjunto.branco.jpg.jpeg">
+        <div class="card-badge">Retrô</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/conjunto.branco.jpg.jpeg" alt="Brasil Branca">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Seleção</div>
+          <div class="card-name">Brasil Branca</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Especial"
+           data-desc="Edição Especial"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.a.jpg.jpg">
+        <div class="card-badge">Especial</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.a.jpg.jpg" alt="Especial">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Edição Especial</div>
+          <div class="card-name">Edição Especial</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Limitada"
+           data-desc="Edição Limitada"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.az.jpg.jpg">
+        <div class="card-badge">Limited</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.az.jpg.jpg" alt="Limitada">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Limitada</div>
+          <div class="card-name">Ed. Limitada</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Retrô Amarela Limitada"
+           data-desc="Edição Limitada"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.ama.jpg.jpg">
+        <div class="card-badge">Limited</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.ama.jpg.jpg" alt="Amarela Limitada">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Limitada</div>
+          <div class="card-name">Amarela Ed. Ltda</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+      <div class="card reveal"
+           data-titulo="Camisa Infantil Brasil"
+           data-desc="Brasil Infantil"
+           data-preco="R$ 220,00"
+           data-src="produtos.king/camisa.brasil.infantil.jpeg">
+        <div class="card-badge">Kids</div>
+        <div class="card-img-wrap">
+          <img src="produtos.king/camisa.brasil.infantil.jpeg" alt="Brasil Infantil">
+        </div>
+        <button class="card-buy"><i class="fa fa-shopping-bag"></i></button>
+        <div class="card-info">
+          <div class="card-tag">Infantil</div>
+          <div class="card-name">Brasil Kids</div>
+          <div class="card-price">R$ 220,00</div>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- ─── MODAL ─────────────────────────────── -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-box" style="background-color: #1a1a1a; padding: 20px; border: 2px solid gold; width: 90%; max-width: 400px; border-radius: 15px; text-align: center; position: relative; color: white;">
+      <button class="modal-close" id="modal-close" style="position: absolute; right: 15px; top: 10px; color: gold; background: transparent; border: none; font-size: 30px; cursor: pointer;">×</button>
+      <div class="modal-img-wrap">
+        <img src="" id="modal-img" alt="" style="width: 100%; max-height: 300px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;">
+      </div>
+      <div class="modal-body">
+        <div class="modal-tag" style="color: gray; font-size: 14px; margin-bottom: 5px;">// King Store Imported</div>
+        <div class="modal-title" id="modal-titulo" style="font-size: 20px; color: gold; margin-bottom: 5px;"></div>
+        <div class="modal-price" id="modal-preco" style="font-size: 22px; font-weight: bold; margin: 10px 0;"></div>
+        <div class="modal-actions">
+          <button class="modal-wpp" id="modal-wpp" style="width: 100%; background: gold; color: black; border: none; padding: 12px; font-weight: bold; cursor: pointer; border-radius: 5px;">
+            <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ─── CONTATO ───────────────────────────── -->
+  <section id="contato">
+    <div class="contact-grid">
+ 
+      <div class="contact-left reveal">
+        <p class="section-tag">// Fale Conosco</p>
+        <h2>Entre em<br>Contato</h2>
+        <p>Tire suas dúvidas, faça seu pedido ou conheça nossa coleção completa entrando em contato pelos nossos canais.</p>
+        <div class="contact-socials">
+          <a href="https://wa.me/5511949008253" target="_blank" class="social-link">
+            <i class="fa-brands fa-whatsapp"></i> (11) 94900-8253
+          </a>
+          <a href="https://www.instagram.com/kingstoreimported" target="_blank" class="social-link">
+            <i class="fa-brands fa-instagram"></i> @kingstoreimported
+          </a>
+          <a href="https://www.facebook.com/share/16fDFGuNaL/" target="_blank" class="social-link">
+            <i class="fa-brands fa-facebook"></i> King Store Facebook
+          </a>
+        </div>
+      </div>
+ 
+      <div class="reveal">
+        <form class="contact-form" onsubmit="return false">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome *</label>
+              <input type="text" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label>Sobrenome *</label>
+              <input type="text" placeholder="Sobrenome" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seuemail@exemplo.com">
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="tel" placeholder="(11) 00000-0000">
+          </div>
+          <div class="form-group">
+            <label>Assunto</label>
+            <select>
+              <option value="">Selecione</option>
+              <option>Dúvida sobre produto</option>
+              <option>Status do pedido</option>
+              <option>Parcerias</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferência de Contato</label>
+            <div class="form-radio-group">
+              <div class="radio-option">
+                <input type="radio" name="pref" id="r-email">
+                <label for="r-email">E-mail</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="pref" id="r-tel">
+                <label for="r-tel">Telefone</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" name="pref" id="r-wpp">
+                <label for="r-wpp">WhatsApp</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mensagem *</label>
+            <textarea rows="4" placeholder="Como podemos ajudar?" required></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="novidades">
+            <label for="novidades">Quero receber novidades e lançamentos</label>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Enviar Mensagem</button>
+        </form>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- ─── MAPA ──────────────────────────────── -->
+  <div class="mapa-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!4v1778803058032!6m8!1m7!1sMIOaYrW9qwIYvte1ENMPjQ!2m2!1d-23.64998887844929!2d-46.44410494928627!3f56.889247161288466!4f-2.346340227100569!5f0.42149599786022457"
+      allowfullscreen loading="lazy">
+    </iframe>
+    <div class="mapa-overlay"></div>
+  </div>
+ 
+  <!-- ─── FOOTER ────────────────────────────── -->
+  <footer>
+    <div class="footer-brand">KING STORE</div>
+    <div class="footer-copy">© 2026 King Store — Todos os direitos reservados.</div>
+  </footer>
+ 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
       
-    
+        // 1. Alert Inicial
+        const dataAtual = new Date();
+        const formatoOpcoes = { 
+            day: '2-digit', month: '2-digit', year: 'numeric', 
+            hour: '2-digit', minute: '2-digit', second: '2-digit' 
+        };
+        const dataHoraFormatada = dataAtual.toLocaleString('pt-BR', formatoOpcoes);
+        alert("Bem-vindo à King Store!\n\nData e Hora do acesso:\n" + dataHoraFormatada);
 
-<!-- CONTATO -->
-<p class="contato">
-    Encomendas on-line:
+        // 2. Lógica do Modal com a nova classe CSS
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        const modalTitulo = document.getElementById("modal-titulo");
+        const modalPreco = document.getElementById("modal-preco");
+        const btnFechar = document.getElementById("modal-close");
+        const cards = document.querySelectorAll(".card");
 
-    <a href="https://wa.me/5511949008253?text=Olá,%20tenho%20interesse%20nas%20camisas" target="_blank">
-        <i class="fa fa-whatsapp"></i> WhatsApp
-    </a>
+        cards.forEach(card => {
+            card.onclick = function() {
+                const tituloCard = card.getAttribute("data-titulo");
+                const precoCard = card.getAttribute("data-preco");
+                const imgSrc = card.getAttribute("data-src");
 
-    <a href="https://linktr.ee/kingstoreimported" target="_blank">
-        <i class="fa fa-instagram"></i> Instagram
-    </a>
-</p>
+                modalImg.src = imgSrc;
+                modalTitulo.innerText = tituloCard;
+                modalPreco.innerText = precoCard;
 
+                // Usa a classe .open do seu CSS para animar a entrada
+                modal.classList.add("open");
+            };
+        });
+
+        // Fechar modal ao clicar no 'X'
+        btnFechar.onclick = function() {
+            modal.classList.remove("open");
+        };
+
+        // Fechar modal ao clicar fora da caixa
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove("open");
+            }
+        };
+
+        // 3. HEADER SCROLL (Muda o menu ao rolar a página para baixo)
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+
+        // 4. SCROLL REVEAL (Animação dos produtos surgindo ao rolar)
+        const revealElements = document.querySelectorAll(".reveal");
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 5. CURSOR CUSTOMIZADO (Faz a bolinha dourada seguir o rato)
+        const cursor = document.getElementById("cursor");
+        const cursorRing = document.getElementById("cursorRing");
+        const hoverElements = document.querySelectorAll("a, button, .card, .radio-option, .form-check");
+
+        window.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+            
+            setTimeout(() => {
+                cursorRing.style.left = e.clientX + "px";
+                cursorRing.style.top = e.clientY + "px";
+            }, 60);
+        });
+
+        hoverElements.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                cursor.classList.add("expand");
+                cursorRing.classList.add("expand");
+            });
+            el.addEventListener("mouseleave", () => {
+                cursor.classList.remove("expand");
+                cursorRing.classList.remove("expand");
+            });
+        });
+    });
+  </script>
 </body>
 </html>
